@@ -2,6 +2,9 @@ import argparse
 import json
 import os
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 parser = argparse.ArgumentParser(description="Make a call and forward it to {who?} using 46elks' API")
 
@@ -14,12 +17,12 @@ parser.add_argument("Callee", type=str, help="Callee's phone number in E.164 for
 args = parser.parse_args()
 
 auth = (
-    args.API_USERNAME,
-    args.API_PASSWORD
+    os.getenv('API_USERNAME'),
+    os.getenv('API_PASSWORD')
     )
 
 action = {
-    "connect" : os.getenv('API_USERNAME') # Make user choose action?
+    "connect" : os.getenv('CAROLINE_PHONE_NUMBER') # Make user choose action?
 }
 
 fields = {
