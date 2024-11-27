@@ -1,4 +1,4 @@
-# 46elks Call Forwarding
+# 46elks Call Handler
 
 This project contains a Python script for making and receiving calls using the [46elks](https://46elks.se/) API.
 
